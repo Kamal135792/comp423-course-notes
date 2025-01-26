@@ -108,10 +108,39 @@ Now we have a project that uses git for version control and GitHub to host our c
 
 ### Add Development Container Configuration ###
 
-1. In VS Code, open your projects folder. You can do this via: File > Open Folder.
-2. Install the Dev Containers extension for VS Code.
-3. Create a ``.devcontainer`` directory in the root of your project
-4. Inside the ``.devcontainer`` directory add this file ``devcontainer.json``
+1. Run Docker
+3. In VS Code, open your projects folder. You can do this via: File > Open Folder.
+4. Install the Dev Containers extension for VS Code.
+5. Create a ``.devcontainer`` directory in the root of your project
+6. Inside the ``.devcontainer`` directory add this file ``devcontainer.json``
+7. Inside the devcontainer.json file add the following code:
+
+    ```json
+        {
+    "name": "go project",
+    "image": "mcr.microsoft.com/devcontainers/go:latest",
+    "customizations": {
+        "vscode": {
+        "settings": {},
+        "extensions": ["golang.Go"]
+        }
+    }
+    }
+    ```
+
+    In this code we are specifying the following:
+    
+    - ``name``: A descriptive name for your dev container.
+    - ``image``: The Docker image to use, in this case, the latest version of a Python environment. Microsoft maintains a collection of base images for many programming language environments, but you can also create your own!
+    - ``customizations``: Adds useful configurations to VS Code, like installing extensions. By adding extensions here we can ensure other developers on your project have them installed in their dev containers automatically.
+
+8. Reopen the project in the container by pressing Ctrl+Shift+P (or Cmd+Shift+P on Mac), typing "Dev Containers: Reopen in Container," and selecting the option. This may take a few minutes while the image is downloaded and the requirements are installed. 
+    
+    !!! info "If you are experiencing errors"
+        Make sure you have Docker running, make sure you saved your ``devcontainer.json`` file, try to close and reopen VS Code and Docker.
+
+9. Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running ``go version`` to see your dev container is running a recent version of Go.
+
 
 
 
