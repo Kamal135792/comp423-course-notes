@@ -16,7 +16,7 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-markdown_extension:
+markdown_extensions:
   - admonition
   - pymdownx.highlight:
       anchor_linenums: true
