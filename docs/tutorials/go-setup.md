@@ -98,7 +98,7 @@ Now that we have a git repo, lets create a remote repository on GitHub that will
     git push --set-upstream origin main
     ```
 
-    !!! info "What does this command do???"
+    !!! question "What does this command do???"
 
         "This command creates a connection, or "tracking relationship," between your local feature-awesome branch and a new branch of the same name on the remote repository. This tracking relationship is important – once established, it lets you use simple git push and git pull commands without having to specify the remote and branch names each time." - Kris Jordan
 
@@ -116,15 +116,15 @@ Now we have a project that uses git for version control and GitHub to host our c
 7. Inside the devcontainer.json file add the following code:
 
     ```json
-        {
+    {
     "name": "go project",
     "image": "mcr.microsoft.com/devcontainers/go:latest",
     "customizations": {
-        "vscode": {
-        "settings": {},
-        "extensions": ["golang.Go"]
+            "vscode": {
+            "settings": {},
+            "extensions": ["golang.Go"]
+            }
         }
-    }
     }
     ```
 
@@ -136,7 +136,7 @@ Now we have a project that uses git for version control and GitHub to host our c
 
 8. Reopen the project in the container by pressing Ctrl+Shift+P (or Cmd+Shift+P on Mac), typing "Dev Containers: Reopen in Container," and selecting the option. This may take a few minutes while the image is downloaded and the requirements are installed. 
     
-    !!! info "If you are experiencing errors"
+    !!! warning "If you are experiencing errors"
         Make sure you have Docker running, make sure you saved your ``devcontainer.json`` file, try to close and reopen VS Code and Docker.
 
 9. Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running ``go version`` to see your dev container is running a recent version of Go.
@@ -158,10 +158,10 @@ Now we have a project that uses git for version control and GitHub to host our c
     }
     ```
 
-3. Write the code to print "Hello World" by putting this into your ``main`` function:
+3. Write the code to print "Hello COMP423!" by putting this into your ``main`` function:
 
     ```Go
-    fmt.Println("Hello World!")
+    fmt.Println("Hello COMP423!")
     ```
 
 ### Building and Running the Program ###
@@ -170,7 +170,7 @@ Now we have a project that uses git for version control and GitHub to host our c
 
     ``go mod init <name>``
 
-    !!! info "What this does"
+    !!! question "What this does"
         The command creates a ``go.mod`` file which will manage our dependancies and versions in our Go project. Similar to the purpose of the Dev Container, this makes it easier for a team to collaborate because everyone can use the same dependancies and versions of these dependancies.
 
 2. Now finally we can run our program by using this command:
@@ -195,7 +195,7 @@ Now we have a project that uses git for version control and GitHub to host our c
     Go is a compiled language. This means that a compiler turns the code we write into executable code before running it. So whats actually happening when we use `go run` is that is that the code is compiled into a temporary file then executed, which makes this command useful for quick testing or debugging errors. However, when we use `go build` we are creating the actual executable file that can be run without a Go environment. This is similar to the `gcc` command that is used in the C programming language which creates a executable file that you can later run. This method is useful for when you have a completed product that you are ready to distribute or deploy.
 
 
-Congrats, now you have created your first program in Go! Good luck on your programming journey!
+Congratulations, now you have created your first program in Go! Good luck on your programming journey!
 
 
 
