@@ -141,7 +141,7 @@ Now we have a project that uses git for version control and GitHub to host our c
 
 9. Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running ``go version`` to see your dev container is running a recent version of Go.
 
-## Writing a Hello World Program ##
+## Writing a Hello COMP423 Program ##
 
 ### Creating the file ###
 
@@ -161,7 +161,7 @@ Now we have a project that uses git for version control and GitHub to host our c
 3. Write the code to print "Hello COMP423!" by putting this into your ``main`` function:
 
     ```Go
-    fmt.Println("Hello COMP423!")
+    fmt.Println("Hello COMP423")
     ```
 
 ### Building and Running the Program ###
@@ -177,7 +177,7 @@ Now we have a project that uses git for version control and GitHub to host our c
 
     ``go run main.go``
 
-    If done correctly, it should output "Hello World!".
+    If done correctly, it should output "Hello COMP423".
 
 3. To build the program into a binary file run the following command:
 
@@ -189,7 +189,7 @@ Now we have a project that uses git for version control and GitHub to host our c
 
     ``./hello-world``
 
-    If done correctly, it should output "Hello World!".
+    If done correctly, it should output "Hello COMP423".
 
 !!! question "What's the difference between the `run` and `build` commands"
     Go is a compiled language. This means that a compiler turns the code we write into executable code before running it. So whats actually happening when we use `go run` is that is that the code is compiled into a temporary file then executed, which makes this command useful for quick testing or debugging errors. However, when we use `go build` we are creating the actual executable file that can be run without a Go environment. This is similar to the `gcc` command that is used in the C programming language which creates a executable file that you can later run. This method is useful for when you have a completed product that you are ready to distribute or deploy.
