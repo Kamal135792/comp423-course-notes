@@ -141,6 +141,67 @@ Now we have a project that uses git for version control and GitHub to host our c
 
 9. Once your dev container setup completes, close the current terminal tab (trash can), open a new terminal pane within VSCode, and try running ``go version`` to see your dev container is running a recent version of Go.
 
+## Writing a Hello World Program ##
+
+### Creating the file ###
+
+1. Inside your projects directory create a file called ``main.go``.
+2. Copy this boilerplate code into the file:
+
+    ```Go
+    package main
+
+    import "fmt"
+
+    func main() {
+        
+    }
+    ```
+
+3. Write the code to print "Hello World" by putting this into your ``main`` function:
+
+    ```Go
+    fmt.Println("Hello World!")
+    ```
+
+### Building and Running the Program ###
+
+1. We can create a Go module to make sure to track our dependancies using this command:
+
+    ``go mod init <name>``
+
+    !!! info "What this does"
+        The command creates a ``go.mod`` file which will manage our dependancies and versions in our Go project. Similar to the purpose of the Dev Container, this makes it easier for a team to collaborate because everyone can use the same dependancies and versions of these dependancies.
+
+2. Now finally we can run our program by using this command:
+
+    ``go run main.go``
+
+    If done correctly, it should output "Hello World!".
+
+3. To build the program into a binary file run the following command:
+
+    ``go build -o hello-world main.go``
+
+    If done correctly, it should create an executable file called ``hello-world``.
+    
+3. Now we can run the executable file we just created using the following command:
+
+    ``./hello-world``
+
+    If done correctly, it should output "Hello World!".
+
+!!! question "What's the difference between the `run` and `build` commands"
+    Go is a compiled language. This means that a compiler turns the code we write into executable code before running it. So whats actually happening when we use `go run` is that is that the code is compiled into a temporary file then executed, which makes this command useful for quick testing or debugging errors. However, when we use `go build` we are creating the actual executable file that can be run without a Go environment. This is similar to the `gcc` command that is used in the C programming language which creates a executable file that you can later run. This method is useful for when you have a completed product that you are ready to distribute or deploy.
+
+
+Congrats, now you have created your first program in Go! Good luck on your programming journey!
+
+
+
+
+
+
 
 
 
